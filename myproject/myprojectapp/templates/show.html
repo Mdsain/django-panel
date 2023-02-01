@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Django Mysql CRUD Operation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <!-- bootsrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <section style="background: aliceblue;height: 100vh;">
+        <div class="container">
+            <h2 class="text-center p-5" style="font-size: 27px;font-weight: 500;">Django Mysql CRUD (Create Read Update
+                Delete) with Datatables</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <table class="table table-bordered text-center shadow">
+                        <tbody style="background-color: #fff;">
+                            <tr style="background-color: #ffcc00;">
+                                <th>User Id</th>
+                                <th>User Name</th>
+                                <th>User Email</th>
+                                <th>User Password</th>
+                                <th>User Contact</th>
+                                <th>User Delete</th>
+                                <th>User Edit</th>
+                            </tr>
+                            {% for user in user %}
+                            <tr>
+                                <td>{{user.id}}</td>
+                                <td>{{user.uname}}</td>
+                                <td>{{user.uemail}}</td>
+                                <td>{{user.upassword}}</td>
+                                <td>{{user.mobile}}</td>
+                                <td><a href="/delete/{{user.id}}" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete user"><i class="bi bi-trash3-fill"></i></a></td>
+                                <td><a href="/edit/{{user.id}}" class="btn btn-success btn-sm" data-bs-toggle="tooltip"data-bs-placement="top" title="Edit user details"><i class="bi bi-pencil-square"></i></a></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

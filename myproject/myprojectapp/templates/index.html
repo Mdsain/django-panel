@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Django Mysql CRUD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <!-- bootsrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+        form {
+            background: #fff;
+            box-sizing: border-box;
+            box-shadow: 0 5px 9px #eee;
+            padding: 36px;
+            margin: 4px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section style="background: aliceblue;height: 100vh;">
+        <div class="container">
+            <h2 class="text-center p-5" style="font-size: 27px;font-weight: 500;">Django Mysql CRUD (Create Read Update
+                Delete)</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <form method="POST" action="/">
+                        {% csrf_token %}
+                        <div class="form-group my-3">
+                            <label><b>User name:</b></label>
+                            {{form.uname}}
+                        </div>
+                        <div class="form-group my-3">
+                            <label><b>User email:</b></label>
+                            {{form.uemail}}
+                        </div>
+                        <div class="form-group my-3">
+                            <label><b>User password:</b></label>
+                            {{form.upassword}}
+                        </div>
+                        <div class="form-group my-3">
+                            <label><b>Contact number:</b></label>
+                            {{form.mobile}}
+                        </div>
+                        <input type="submit" name="insert" value="insert" class="btn btn-primary" style="width: 50%;">
+                        <a type="button" href="/show" target="_blank" class="btn btn-primary" style="width: 49%;">Check
+                            Details <i class="bi bi-arrow-right"></i></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
